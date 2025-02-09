@@ -1,8 +1,8 @@
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
+import { useRouter } from "@/i18n/routing";
 import { PlayBtn } from "@/components/common/button/PlayBtn";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
-import dynamic from "next/dynamic";
-import { useRouter } from "@/i18n/routing";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), {
   ssr: false,
