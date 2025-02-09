@@ -6,10 +6,12 @@ import { Link } from "@/i18n/routing";
 import CarouselGrid from "@/components/shared/swiper/SwiperItems";
 import { SwiperSlide } from "swiper/react";
 import { NavigateInOurCategoryCard } from "./NavigateInOurCategoryCard";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export function NavigateInOurCategory() {
   const { homeTr } = useHomeTr();
   const [state, setState] = useState(0);
+  const { width } = useWindowSize()
 
   const courses = [
     {
@@ -64,8 +66,14 @@ export function NavigateInOurCategory() {
     },
   ];
 
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+
   return (
-    <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full">
+    <div className="flex-col items-center gap-y-[80px] py-[80px] w-full hidden xl:flex">
       <h2 className="text-[2rem] font-bold">
         {homeTr("home.NavigateInOurCategory.title")}
       </h2>
@@ -103,7 +111,7 @@ export function NavigateInOurCategory() {
             </Link>
           </div>
           <div>
-            <CarouselGrid amount={3}>
+            <CarouselGrid amount={getAmount()}>
               {courses.map((item, index) => (
                 <SwiperSlide key={index}>
                   <NavigateInOurCategoryCard {...item} />

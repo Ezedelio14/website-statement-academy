@@ -7,7 +7,7 @@ import CheckSvg from "@/assets/svg/CheckSvg";
 export function HomeStartFromBegin() {
   const { homeTr } = useHomeTr();
   return (
-    <div className="flex items-center gap-y-[80px] h-[574px] w-full bg-white">
+    <div className="items-center gap-y-[80px] h-[574px] w-full bg-white hidden xl:flex">
       <div className="pl-[112px] flex flex-col h-full py-[47px] pr-[40px]">
         <div className="w-[416px] h-full flex flex-col justify-between">
           <SimpleLogo />

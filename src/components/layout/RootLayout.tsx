@@ -9,7 +9,7 @@ interface Props {
 }
 export function RootLayout({ children }: Props) {
   return (
-    <div className="h-screen w-screen flex items-center flex-col scroll-auto">
+    <div className="h-screen w-full flex items-center flex-col scroll-auto">
       <Header />
       <Container>
         {children}

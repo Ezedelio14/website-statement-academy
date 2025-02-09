@@ -8,15 +8,20 @@ export function HomeHero() {
   const { homeTr } = useHomeTr();
 
   return (
-    <Section className="mt-[86px] min-h-[538px] flex items-center justify-between max-h-[1440px]">
-      <div className=" max-w-[592px]">
-        <h1 className="text-[3rem] font-bold">{homeTr("home.Hero.title")}</h1>
-        <p className="mt-6 text-[1.125rem]">
+    <Section className="mt-[86px] lg:min-h-[538px] flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row items-center justify-between max-h-[1440px] px-4 md:px-8">
+      <div className="max-w-[336px] px-1 md:max-w-[592px] text-center md:text-left">
+        <h1 className="text-[1.5rem] md:text-[3rem] font-bold text-center lg:text-left">
+          {homeTr("home.Hero.title")}
+        </h1>
+        <p className="mt-4 lg:mt-6 px-3 text-[1rem] lg:text-[1.125rem] text-center lg:text-left">
           {homeTr("home.Hero.description")}
         </p>
-        <CoursesBtn className="mt-8" />
+        <div className="w-full flex justify-center lg:justify-start">
+
+        <CoursesBtn className="mt-6 lg:mt-8" />
+        </div>
       </div>
-      <SocialAuthCard />
+      <SocialAuthCard className="w-full lg:w-auto hidden lg:flex" />
     </Section>
   );
 }
