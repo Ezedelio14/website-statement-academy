@@ -14,7 +14,7 @@ export function CourseView() {
   const { course, isLoadingCourse } = useApiLoadCoursesById({ id: courseId })
 
   return (
-    <div className="relative text-white w-full flex flex-col justify-center">
+    <div className="relative text-white w-full flex flex-col justify-center px-4 md:px-8 mt-5">
       <div className="absolute top-0 left-0 h-[722px] overflow-hidden">
         {isLoadingCourse ? (
           <div className="w-[100vw] h-full flex justify-center items-center">
@@ -37,19 +37,31 @@ export function CourseView() {
           <CourseThumb
             open={isTrailerOpen}
             title={course?.data?.title}
+            mentor={course?.data?.mentor}
             trailer={course?.data?.trailer}
             duration={course?.data?.duration}
             lessons={course?.data?.numberLessons}
             description={course?.data?.description}
-            mentor={course?.data?.mentor}
             onOpenTrailer={() => setIsTrailerOpen(true)}
           />
         </div>
       )}
 
-      <CoursePresentation />
+      {!isLoadingCourse && (
+        <CoursePresentation
+          courseId={course?.data?.id}
+          isLoading={isLoadingCourse}
+          banner={course?.data?.banner}
+          trailer={course?.data?.trailer}
+          duration={course?.data?.duration}
+          lessons={course?.data?.numberLessons}
+          category={course?.data?.category?.name}
+          description={course?.data?.description}
+          mentor={course?.data?.authorId?.[0]?.name}
+        />
+      )}
 
-      <ExploreCoursesSection />
+      <ExploreCoursesSection courseId={course?.data?.category?.id} />
     </div>
   );
 }
