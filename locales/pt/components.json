@@ -1,0 +1,52 @@
+{
+  "components": {
+    "Labels": {
+      "and-the": "e a",
+      "lessons": "Aulas",
+      "sign-in": "Entrar na plataforma",
+      "explore-course": "Explorar cursos",
+      "google": "Continuar com o Google",
+      "signin-question": "Já tem uma conta?",
+      "sign-in-2": "Iniciar Sessão",
+      "create-account": "Criar Conta",
+      "see-trailer": "Assistir Trailer",
+      "share": "Compartilhar",
+      "mentor": "Mentor"
+    },
+    "Links": {
+      "terms": "Termos de uso",
+      "policy_privacy": "Política de privacidade"
+    },
+    "SocialAuthCard": {
+      "title": "Crie a sua conta grátis",
+      "agree": "Ao continuar, você concorda com os",
+      "mirantes": " da Mirantes"
+    },
+    "FAQ": {
+      "title": "Aqui as suas perguntas são respondidas",
+      "description": "Outras pessoas que usam a Mirantes se perguntam",
+      "question_and_answer": {
+        "1": {
+          "question": "O que é a Mirantes?",
+          "answer": "A Mirantes é uma plataforma SaaS onde as pessoas podem gerir as suas carreiras (isto inclui encontrar vagas de emprego e acompanhar o estado das suas candidaturas) e as empresas podem gerir os seus funcionários (isto inclue lançar anúncios de vagas, fazer recrutamentos e contratações)."
+        },
+        "2": {
+          "question": "O que está disponível na Mirantes?",
+          "answer": "A Mirantes é uma plataforma SaaS onde as pessoas podem gerir as suas carreiras (isto inclui encontrar vagas de emprego e acompanhar o estado das suas candidaturas) e as empresas podem gerir os seus funcionários (isto inclue lançar anúncios de vagas, fazer recrutamentos e contratações)."
+        },
+        "3": {
+          "question": "O que é o MIRA?",
+          "answer": "A Mirantes é uma plataforma SaaS onde as pessoas podem gerir as suas carreiras (isto inclui encontrar vagas de emprego e acompanhar o estado das suas candidaturas) e as empresas podem gerir os seus funcionários (isto inclue lançar anúncios de vagas, fazer recrutamentos e contratações)."
+        },
+        "4": {
+          "question": "O que é o modelo SaaS",
+          "answer": "A Mirantes é uma plataforma SaaS onde as pessoas podem gerir as suas carreiras (isto inclui encontrar vagas de emprego e acompanhar o estado das suas candidaturas) e as empresas podem gerir os seus funcionários (isto inclue lançar anúncios de vagas, fazer recrutamentos e contratações)."
+        }
+      }
+    },
+    "StartToDay": {
+      "title": "Comece aprender hoje mesmo com a ",
+      "description": "Comece sua carreira com Mirantes Academy. Nosso programa desenvolve seu conhecimento desde o início para que você entenda completamente o assunto."
+    }
+  }
+}

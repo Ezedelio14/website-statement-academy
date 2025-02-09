@@ -1,0 +1,152 @@
+{
+  "home": {
+    "Hero": {
+      "title": "Desbloqueie habilidades crie uma nova vida",
+      "description": "A Mirantes oferece cursos técnicos para profissionais dos principais professores em seus setores."
+    },
+    "WhatWeHave": {
+      "title": "O que temos a disposição",
+      "items": {
+        "courses": "cursos",
+        "teachers": "professores",
+        "lessons": "aulas"
+      }
+    },
+    "ForProfessionals": {
+      "title": "Para profissionais e para negócios",
+      "items": {
+        "1": {
+          "title": "Tenha mais liberdade de tempo",
+          "description": "Com o Marketing Digital você pode trabalhar onde e quando quiser."
+        }
+      }
+    },
+    "Meeting-with-best": {
+      "title": "Um encontro com os melhores do mercado",
+      "new": "Novo",
+      "item": {
+        "title": "MARKETING",
+        "description": "Um devaneio profundo sobre Marketing",
+        "see-trailer": "Assistir ao trailer"
+      }
+    },
+    "MiraAcademy": {
+      "title": "Mira Academy com vários conteúdos",
+      "items": {
+        "1": "Tesouro Direto"
+      },
+      "contents": {
+        "1": {
+          "title1": "classe",
+          "description": "Aulas com alto nível de produção sobre diversos assuntos relacionados a investimentos e finanças, onde você é ensinado por grandes especialistas do mercado."
+        },
+        "2": {
+          "title1": "livros",
+          "description": "Aulas com alto nível de produção sobre diversos assuntos relacionados a investimentos e finanças, onde você é ensinado por grandes especialistas do mercado."
+        },
+        "3": {
+          "title1": "séries",
+          "description": "Aulas com alto nível de produção sobre diversos assuntos relacionados a investimentos e finanças, onde você é ensinado por grandes especialistas do mercado."
+        }
+      }
+    },
+    "ComingSoon": {
+      "title": "Em breve",
+      "mentor": "Mentor"
+    },
+    "TheBestMentorAreInMirantes": {
+      "title": "Os melhores mentores estão na Mirantes"
+    },
+    "NavigateInOurCategory": {
+      "title": "Navegue entre as nossas categorias",
+      "courses-about": "cursos sobre",
+      "see-all-courses": "Ver todos os cursos",
+      "see-course": "Ver curso",
+      "classes": "Aulas",
+      "see-trailer": "Assistir ao trailer"
+    },
+    "HomeStartFromBegin": {
+      "title": "Inicie do zero com a",
+      "items": {
+        "1": "Mentores especializados",
+        "2": "Aulas interativas",
+        "3": "Certificados de conclusão"
+      }
+    },
+    "Overview": {
+      "title": "Uma visão geral sobre a nossa plataforma"
+    },
+    "AllWorkLevels": {
+      "title": "Trabalhamos com todos os níveis de aprendizado",
+
+      "levels": {
+        "bigener": {
+          "title": "Iniciante",
+          "items": {
+            "1": {
+              "title": "Aprenda do zero bigener 1",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "2": {
+              "title": "Aprenda do zero bigener 2",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "3": {
+              "title": "Aprenda do zero bigener 3",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "4": {
+              "title": "Aprenda do zero bigener 4",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            }
+          }
+        },
+        "middle": {
+          "title": "Intermédio",
+          "items": {
+            "1": {
+              "title": "Aprenda do zero middle 1",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "2": {
+              "title": "Aprenda do zero middle 2",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "3": {
+              "title": "Aprenda do zero middle 3",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "4": {
+              "title": "Aprenda do zero middle 4",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            }
+          }
+        },
+        "professional": {
+          "title": "Profissional",
+          "items": {
+            "1": {
+              "title": "Aprenda do zero Profissional 1",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "2": {
+              "title": "Aprenda do zero Profissional 2",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "3": {
+              "title": "Aprenda do zero Profissional 3",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            },
+            "4": {
+              "title": "Aprenda do zero Profissional 4",
+              "description": "Aprenda conceitos novos e técnicos sobre o mercado financeiro e melhore ainda mais a sua tomada de decisão."
+            }
+          }
+        }
+      }
+    },
+    "Testimony": {
+      "title": "Veja o que nossos membros estão dizendo."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import url("./styles.components.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020408;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  font-style: normal;
+  font-optical-sizing: auto;
+  background: var(--background);
+  font-family: "Epilogue", serif;
+}
+
+p {
+  font-size: 400;
+  font-size: 1rem;
+  color: theme("colors.gray.DEFAULT");
+}
+
+a {
+  cursor: pointer;
+}

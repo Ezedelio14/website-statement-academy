@@ -1,0 +1,41 @@
+{
+  "explore-courses": {
+    "Tags": {
+      "title": "Um mundo enorme para lhe inspirar",
+      "tags": {
+        "1": "Tendências",
+        "2": "Educação",
+        "3": "Alimentação",
+        "4": "Design e Estilo",
+        "5": "Música",
+        "6": "Negócio",
+        "7": "Economia",
+        "8": "Casa e  Estilo de vida",
+        "9": "Comunidade e Governo",
+        "10": "Ciência e Tecnologia",
+        "11": "Bem-Estar"
+      }
+    },
+    "Courses": {
+      "see-all": "Ver todos",
+      "tendencies": "Cursos em tendências",
+      "business-management": "Gestão empresarial",
+      "filters": {
+        "all": "Todas",
+        "coming-soon": "Em breve"
+      },
+      "new-course": "Novo",
+      "lessons": "Aulas"
+    },
+    "Course": {
+      "presentation": "Apresentação",
+      "modules": "Módulo: Introdução",
+      "see-trailer": "Ver trailer do curso",
+      "journey": "Jornada do curso",
+      "mentor": "Mentor(a):",
+      "duration": "Duração do curso:",
+      "category": "Categoria",
+      "others": "Outros cursos relacionados"
+    }
+  }
+}
