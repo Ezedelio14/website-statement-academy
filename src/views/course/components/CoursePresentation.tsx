@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useExploreCoursesTr } from "../../../../locales/utils/useExploreCoursesTr";
-import { Section } from "@/components/common/section/Section";
-import { PlayBtn } from "@/components/common/button/PlayBtn";
 import PlayBlueSvg from "@/assets/svg/PlayBlueSvg";
-import ArrowSvg from "@/assets/svg/ArrowSvg";
 import ChevronDown from "@/assets/svg/ChevronDown";
+import { PlayBtn } from "@/components/common/button/PlayBtn";
+import { Section } from "@/components/common/section/Section";
+import { useExploreCoursesTr } from "../../../../locales/utils/useExploreCoursesTr";
 
 export function CoursePresentation() {
   const [state, setState] = useState(0);

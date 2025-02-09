@@ -4,7 +4,7 @@ import { cn } from "@/utils/tw";
 interface Props {
   label: string;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
   leftElement?: React.ReactNode;
   rightElement?: React.ReactNode;
   variant?: "outline" | "default";

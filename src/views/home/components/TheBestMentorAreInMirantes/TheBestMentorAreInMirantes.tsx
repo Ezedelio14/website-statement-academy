@@ -62,7 +62,7 @@ export function TheBestMentorAreInMirantes() {
     <div className="px-4 md:px-8">
       <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full">
         <h2 className="text-[2rem] font-bold">
-          {homeTr("home.ComingSoon.title")}
+          {homeTr("home.TheBestMentorAreInMirantes.title")}
         </h2>
         <CarouselGrid amount={getAmount()}>
           {items.map((item, index) => (

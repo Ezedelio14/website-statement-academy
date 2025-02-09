@@ -9,7 +9,7 @@ export function PlayBtn({ onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className="relative size-[48px] flex justify-center items-center"
+      className="relative size-[48px] flex justify-center items-center hover:opacity-50 transition-all"
     >
       <div className="absolute top-0 left-0">
         <PlayOpacitySvg />

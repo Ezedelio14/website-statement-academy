@@ -77,7 +77,7 @@ export function HomeAllWorkLevels() {
           <div className="h-[112px] bg-blue w-[2px]" />
         </div>
         <div className="relative w-full">
-          <div className="absolute z-10 top-0 -left-[6rem] h-full w-[calc(100%+12rem)] flex justify-between items-center transition-all">
+          <div className="absolute z-10 top-0 -left-[3rem] h-full w-[calc(100%+6rem)] flex justify-between items-center transition-all">
             {["bigener", "middle", "professional"].map((level, index) => (
               <div
                 key={index}

@@ -1,5 +1,4 @@
 import { Section } from "@/components/common/section/Section";
-import React from "react";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
 import { Button } from "@/components/common/button/Button";
 import PlayVideoSvg from "@/assets/svg/PlayVideoSvg";
@@ -12,8 +11,8 @@ export function MeetingWeTheBest() {
         {homeTr("home.Meeting-with-best.title")}
       </h2>
       <div className="relative bg-white w-full h-[716px] rounded-[8px]">
-        <div className="w-full max-w-[355px] h-full relative">
-          <div className="w-full max-w-[450px] opacity-gradient-right absolute left-0 h-full" />
+        <div className="w-full h-full relative">
+          <div className="w-full  opacity-gradient-right absolute left-0 h-full" />
           <div className="h-full w-full flex flex-col items-center justify-center relative z-10 gap-y-6">
             <div>
               <span className="text-[1rem] text-centert bg-white text-gray-1 rounded-[16px] px-4 py-[6px]">

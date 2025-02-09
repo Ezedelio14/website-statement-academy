@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { Manrope } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { ApolloProvider } from "@/providers/ApolloPovider";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { SearchContextProvider } from "@/context/SearchContext";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
@@ -40,13 +39,11 @@ export default async function LocaleLayout({
       </head>
       <body className={manRope.className} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <ApolloProvider>
-            <ReactQueryProvider>
-              <SearchContextProvider>
-                <RootLayout>{children}</RootLayout>
-              </SearchContextProvider>
-            </ReactQueryProvider>
-          </ApolloProvider>
+          <ReactQueryProvider>
+            <SearchContextProvider>
+              <RootLayout>{children}</RootLayout>
+            </SearchContextProvider>
+          </ReactQueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

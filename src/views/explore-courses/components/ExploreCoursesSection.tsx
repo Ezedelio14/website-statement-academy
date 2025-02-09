@@ -7,6 +7,7 @@ import { useApiListProducts } from "@/services/hooks/useApiListProducts";
 import { Spinner } from "@/components/shared/spinner/Spinner";
 import { useRouter } from "@/i18n/routing";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface Props {
   items?: any[];
@@ -15,29 +16,34 @@ interface Props {
 }
 export function ExploreCoursesSection({ items, filter, hideShowAll }: Props) {
   const router = useRouter();
+  const reFilter = filter ? JSON?.parse(filter) : undefined;
   const { exploreCourses } = useExploreCoursesTr();
   const { courses, isLoadingCourses } = useApiLoadCourses({
     page: 1,
-    limit: 10,
-    categoryId: filter ? JSON?.parse(filter)?.id : undefined,
+    limit: 15,
+    categoryId: reFilter?.id,
   });
 
-  useEffect(() => {
-    console.log(courses);
-  }, [isLoadingCourses]);
+  const { width } = useWindowSize();
+
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
 
   return (
-    <div className="flex flex-col gap-y-9 w-full">
+    <div className="flex flex-col gap-y-9 w-full px-4 md:px-8">
       <div className="flex gap-x-4">
         <span>
-          {courses?.totalElements +
-            " " +
-            exploreCourses("explore-courses.Courses.courses-in") +
-            " " +
-            filter}
+          {`${courses?.data?.items?.length ?? 0} ${exploreCourses(
+            "explore-courses.Courses.courses-in"
+          )} ${reFilter?.name}`}
         </span>
         <div className="h-full w-[1px] bg-gray-1" />
-        {!hideShowAll && (
+        {hideShowAll && !courses?.data?.items?.length ? (
+          <></>
+        ) : (
           <div
             onClick={() => router.push(`explore-courses/${filter}`)}
             className="text-blue text-base hover:opacity-50 transition-all cursor-pointer"
@@ -51,11 +57,21 @@ export function ExploreCoursesSection({ items, filter, hideShowAll }: Props) {
           <Spinner />
         </div>
       ) : (
-        <div>
-          <CarouselGrid amount={3}>
-            {items?.map((item, index) => (
+        <div className="w-full">
+          <CarouselGrid amount={getAmount()}>
+            {courses?.data?.items?.map((item, index) => (
               <SwiperSlide key={index}>
-                <NavigateInOurCategoryCard {...item} />
+                <NavigateInOurCategoryCard
+                  id={item?.id}
+                  img={item?.banner}
+                  title={item?.title}
+                  course={item?.title}
+                  hours={item?.duration}
+                  trailer={item?.trailer}
+                  lessons={item?.numberLessons}
+                  description={item?.description}
+                  mentor={item?.author[0]?.name}
+                />
               </SwiperSlide>
             ))}
           </CarouselGrid>

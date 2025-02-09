@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 import CoursesCard from "./CoursesCard";
 import { useRouter } from "@/i18n/routing";
 import { decodeText } from "@/utils/text";
+import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
+import { Spinner } from "@/components/shared/spinner/Spinner";
 
 export default function CoursesContainer() {
   const router = useRouter();
@@ -12,166 +14,58 @@ export default function CoursesContainer() {
   const [state, setState] = useState("all");
   const { exploreCourses } = useExploreCoursesTr();
 
-  const courses = [
-    {
-      title: "React para Iniciantes",
-      isNew: true,
-      lessons: 12,
-      duration: 5,
-      thumbnail: "/images/react-course.jpg",
-      description:
-        "Aprenda os fundamentos do React e construa seus primeiros componentes.",
-    },
-    {
-      title: "TypeScript Avançado",
-      isNew: false,
-      lessons: 20,
-      duration: 8,
-      thumbnail: "/images/typescript-course.jpg",
-      description: "Domine o TypeScript e melhore a tipagem dos seus projetos.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-    {
-      title: "CSS Moderno com Tailwind",
-      isNew: false,
-      lessons: 10,
-      duration: 4,
-      thumbnail: "/images/tailwind-course.jpg",
-      description:
-        "Utilize Tailwind CSS para estilizar suas aplicações de forma eficiente.",
-    },
-    {
-      title: "Next.js do Zero ao Avançado",
-      isNew: true,
-      lessons: 15,
-      duration: 6,
-      thumbnail: "/images/nextjs-course.jpg",
-      description: "Aprenda a criar aplicações performáticas com Next.js.",
-    },
-  ];
+  const selectCourse = courseType
+    ? JSON?.parse(decodeText(courseType as string))
+    : "";
+
+  const { courses, isLoadingCourses } = useApiLoadCourses({
+    page: 1,
+    limit: 15,
+    categoryId: selectCourse?.id,
+  });
 
   return (
-    <Section className="w-full flex flex-col  mt-[159px]">
-      <span className="text-xl">
-        {decodeText(courseType?.toString() ?? "")}
-      </span>
-      <div className="flex gap-x-[239px] mt-6">
-        <div className="relative flex flex-col gap-y-4">
+    <Section className="w-full flex flex-col  mt-[159px] px-4 md:px-8">
+      <span className="text-xl">{selectCourse?.name}</span>
+      <div className="flex flex-col lg:flex-row gap-y-8 gap-x-[239px] mt-6">
+        <div className="relative flex lg:flex-col gap-4 lg:border-0 border-b border-[#3A4150]">
           {["all", "coming-soon"]?.map((item, index) => (
             <div
               key={index}
               onClick={() => setState(item)}
-              className="relative cursor-pointer text-gray-2 text-base"
+              className={`relative cursor-pointer text-gray-2 text-base ${state === item ? "border-b" : "text-gray-400"}`}
             >
               {state === item && (
                 <div className="absolute h-full -left-[calc(100%+32px)] flex items-center">
-                  <div className="bg-blue h-[2px] w-[48px]" />
+                  <div className="bg-blue h-[2px] w-[48px] hidden lg:block" />
                 </div>
               )}
               {exploreCourses(`explore-courses.Courses.filters.${item}` as any)}
             </div>
           ))}
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-[32px]">
-          {courses?.map((course, index) => (
-            <CoursesCard
-              key={index}
-              {...course}
-              onClick={() => router.push(`/course/${index}`)}
-            />
-          ))}
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
+          {isLoadingCourses ? (
+            <div className="flex justify-center items-center h-[10rem]">
+              <Spinner />
+            </div>
+          ) : (
+            
+            <>
+             {courses?.data?.items?.map((course, index) => (
+                <CoursesCard
+                  key={index}
+                  title={course?.title}
+                  thumbnail={course?.banner}
+                  duration={course?.duration}
+                  lessons={course?.numberLessons}
+                  description={course?.description}
+                  onClick={() => router.push(`/course/${course?.id}`)}
+                />
+              ))}
+            </>
+            
+          )}
         </div>
       </div>
     </Section>

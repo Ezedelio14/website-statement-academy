@@ -18,11 +18,11 @@ export default function ExploreCoursesTags() {
   }, [isLoadingCategories]);
 
   return (
-    <Section className="flex flex-col items-center w-full mt-[80px]">
-      <h1 className="text-[3rem] font-bold">
+    <Section className="flex flex-col items-center w-full mt-[80px] px-4 md:px-8">
+      <h1 className="text-2xl lg:text-[3rem] font-bold text-center">
         {exploreCourses("explore-courses.Tags.title")}
       </h1>
-      <div className="w-full flex flex-wrap items-center justify-center gap-4 mt-8">
+      <div className="w-full flex  flex-wrap items-center justify-center gap-4 mt-8 overflow-auto" style={{ scrollbarWidth: 'none' }}>
         {isLoadingCategories ? (
           <Spinner />
         ) : (

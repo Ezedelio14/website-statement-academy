@@ -2,11 +2,9 @@ import React from "react";
 import { useCourseContext } from "../context/CourseContext";
 import { Section } from "@/components/common/section/Section";
 import { ExploreCoursesSection } from "./ExploreCoursesSection";
-import { useExploreCoursesTr } from "../../../../locales/utils/useExploreCoursesTr";
 
 export function ExploreCoursesContainer() {
   const { filters } = useCourseContext();
-  const { exploreCourses } = useExploreCoursesTr();
 
   const courses = [
     {
