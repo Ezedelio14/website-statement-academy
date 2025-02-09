@@ -9,40 +9,45 @@ import { useRouter } from "@/i18n/routing";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
 
 interface Props {
-  items?: any[];
+  name?: string;
   filter?: string;
   hideShowAll?: boolean;
 }
-export function ExploreCoursesSection({ items, filter, hideShowAll }: Props) {
+export function ExploreCoursesSection({ name, filter, hideShowAll }: Props) {
   const router = useRouter();
   const reFilter = filter ? JSON?.parse(filter) : undefined;
   const { exploreCourses } = useExploreCoursesTr();
+
   const { courses, isLoadingCourses } = useApiLoadCourses({
     page: 1,
     limit: 15,
+    name: name,
     categoryId: reFilter?.id,
   });
 
   return (
     <div className="flex flex-col gap-y-9 w-full">
-      <div className="flex gap-x-4">
+      <div className="flex gap-x-4 items-center">
         <span>
           {`${courses?.data?.items?.length ?? 0} ${exploreCourses(
             "explore-courses.Courses.courses-in"
-          )} ${reFilter?.name}`}
+          )} ${name ?? reFilter?.name}`}
         </span>
-        <div className="h-full w-[1px] bg-gray-1" />
+        <div className="h-[24px] w-[1px] bg-gray-1" />
         {hideShowAll && !courses?.data?.items?.length ? (
           <></>
         ) : (
-          <div
-            onClick={() => router.push(`explore-courses/${filter}`)}
-            className="text-blue text-base hover:opacity-50 transition-all cursor-pointer"
-          >
-            {exploreCourses("explore-courses.Courses.see-all")}
-          </div>
+          !name && (
+            <div
+              onClick={() => router.push(`explore-courses/${filter}`)}
+              className="text-blue text-base hover:opacity-50 transition-all cursor-pointer"
+            >
+              {exploreCourses("explore-courses.Courses.see-all")}
+            </div>
+          )
         )}
       </div>
+
       {isLoadingCourses ? (
         <div className="w-full h-[550px] flex justify-center items-center ">
           <Spinner />

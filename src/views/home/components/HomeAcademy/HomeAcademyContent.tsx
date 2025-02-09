@@ -18,9 +18,8 @@ export function HomeAcademyContent() {
             .fill(undefined)
             .map((_, index) => {
               return (
-                <>
+                <div key={index}>
                   <HomeAcademyCard
-                    key={index}
                     label={homeTr(
                       `home.MiraAcademy.contents.${index + 1}.title1` as any
                     )}
@@ -31,7 +30,7 @@ export function HomeAcademyContent() {
                     )}
                   />
                   {index < 2 && <div className="gradient-border my-[32px]" />}
-                </>
+                </div>
               );
             })}
         </div>
@@ -41,7 +40,7 @@ export function HomeAcademyContent() {
           .fill(undefined)
           .map((_, index) => (
             <div
-              key={index}
+              key={index + 23}
               className="flex flex-col gap-y-4 items-center bg-blue-1 p-[33px] rounded-[8px]"
             >
               <ClockSvg />

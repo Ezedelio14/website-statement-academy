@@ -2,12 +2,15 @@ import { cn } from "@/utils/tw";
 import React from "react";
 import { useComponentsTr } from "../../../../locales/utils/useComponentsTr";
 import { SocialBtn } from "@/components/common/button/SocialBtn";
+import { useSignInWithGoogle } from "@/components/Authentication/components/LoginWithGoogle/useSignInWithGoogle";
+import { b2cUri } from "@/components/Authentication/api/useApiOneTapGoogleLogin";
 
 interface Props {
   className?: string;
 }
 export function SocialAuthCard({ className }: Props) {
   const { componentsTr } = useComponentsTr();
+  const { isLoggingWithGoogle, loginWithGoogle } = useSignInWithGoogle();
   return (
     <div
       className={cn(
@@ -20,7 +23,7 @@ export function SocialAuthCard({ className }: Props) {
       </span>
 
       <div className="mt-6 w-full">
-        <SocialBtn variant="google" />
+        <SocialBtn variant="google" onClick={loginWithGoogle} />
       </div>
 
       <div>
@@ -28,14 +31,14 @@ export function SocialAuthCard({ className }: Props) {
           {componentsTr("components.SocialAuthCard.agree")}
           {"\n"}
           <a
-            href="#"
+            href="https://mirantes.io/terms-professional"
             className="text-blue hover:opacity-50 transition-all underline"
           >
             {componentsTr("components.Links.terms")}
           </a>{" "}
           <span>{componentsTr("components.Labels.and-the")}</span>{" "}
           <a
-            href="#"
+            href="https://mirantes.io/privacy-policies"
             className="text-blue hover:opacity-50 transition-all underline"
           >
             {componentsTr("components.Links.policy_privacy")}
@@ -45,7 +48,10 @@ export function SocialAuthCard({ className }: Props) {
       </div>
       <p className="text-base">
         {componentsTr("components.Labels.signin-question")}{" "}
-        <a className="text-blue hover:opacity-50 transition-all">
+        <a
+          href={`${b2cUri}/auth/sign-in`}
+          className="text-blue hover:opacity-50 transition-all"
+        >
           {componentsTr("components.Labels.sign-in-2")}
         </a>
       </p>

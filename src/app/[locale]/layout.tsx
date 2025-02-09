@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { RootLayout } from "@/components/layout/RootLayout";
 import { SearchContextProvider } from "@/context/SearchContext";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
+import { LayoutProviders } from "@/providers/LayoutProvider";
 
 const manRope = Manrope({ subsets: ["latin"] });
 
@@ -39,11 +40,11 @@ export default async function LocaleLayout({
       </head>
       <body className={manRope.className} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <ReactQueryProvider>
+          <LayoutProviders>
             <SearchContextProvider>
               <RootLayout>{children}</RootLayout>
             </SearchContextProvider>
-          </ReactQueryProvider>
+          </LayoutProviders>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -7,11 +7,13 @@ import { useRouter } from "@/i18n/routing";
 import { decodeText } from "@/utils/text";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
 import { Spinner } from "@/components/shared/spinner/Spinner";
+import { useSearchContext } from "@/context/SearchContext";
 
 export default function CoursesContainer() {
   const router = useRouter();
   const { courseType } = useParams();
   const [state, setState] = useState("all");
+  const { searchQuery } = useSearchContext();
   const { exploreCourses } = useExploreCoursesTr();
 
   const selectCourse = courseType
@@ -21,6 +23,7 @@ export default function CoursesContainer() {
   const { courses, isLoadingCourses } = useApiLoadCourses({
     page: 1,
     limit: 15,
+    name: searchQuery,
     categoryId: selectCourse?.id,
   });
 

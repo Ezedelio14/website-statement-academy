@@ -5,6 +5,8 @@ import { useComponentsTr } from "../../../../locales/utils/useComponentsTr";
 import PlayVideoSvg from "@/assets/svg/PlayVideoSvg";
 import ShareSvg from "@/assets/svg/ShareSvg";
 import ReactPlayer from "react-player";
+import { Link } from "@/i18n/routing";
+import { b2cUri } from "@/components/Authentication/api/useApiOneTapGoogleLogin";
 
 interface Props {
   title?: string;
@@ -32,14 +34,14 @@ export function CourseThumb({ onOpenTrailer, ...props }: Props) {
     </div>
   ) : (
     <Section className="relative z-50 h-[722px] flex justify-center items-center">
-      <div className="flex flex-col items-center text-center w-[592px]">
+      <div className="flex flex-col items-center text-center ">
         <span className="text-[56px]">{props?.title}</span>
         {props?.mentor && (
           <span className="font-[400]">
             Mentor: <span className="font-bold">{props.mentor}</span>
           </span>
         )}
-        <span className="mt-[24px] w-[500px] text-center">
+        <span className="mt-[24px] w-[500px] text-center line-clamp-2">
           {props?.description}
         </span>
         <div className="flex items-center justify-center mt-4">
@@ -49,7 +51,12 @@ export function CourseThumb({ onOpenTrailer, ...props }: Props) {
         </div>
 
         <div className="flex justify-center mt-[32px] mb-[48px]">
-          <Button label={componentsTr("components.Labels.create-account")} />
+          <Link
+            className="px-[24px] transition-all py-[13.5px] text-lg rounded-[12px] bg-blue hover:opacity-50 !cursor-pointer flex items-center gap-x-4"
+            href={`${b2cUri}/auth/sign-up`}
+          >
+            {componentsTr("components.Labels.create-account")}
+          </Link>
         </div>
 
         <div className="flex items-center justify-center w-full gap-x-[64px]">

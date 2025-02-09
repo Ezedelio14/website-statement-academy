@@ -37,19 +37,31 @@ export function CourseView() {
           <CourseThumb
             open={isTrailerOpen}
             title={course?.data?.title}
+            mentor={course?.data?.mentor}
             trailer={course?.data?.trailer}
             duration={course?.data?.duration}
             lessons={course?.data?.numberLessons}
             description={course?.data?.description}
-            mentor={course?.data?.mentor}
             onOpenTrailer={() => setIsTrailerOpen(true)}
           />
         </div>
       )}
 
-      <CoursePresentation />
+      {!isLoadingCourse && (
+        <CoursePresentation
+          courseId={course?.data?.id}
+          isLoading={isLoadingCourse}
+          banner={course?.data?.banner}
+          trailer={course?.data?.trailer}
+          duration={course?.data?.duration}
+          lessons={course?.data?.numberLessons}
+          category={course?.data?.category?.name}
+          description={course?.data?.description}
+          mentor={course?.data?.authorId?.[0]?.name}
+        />
+      )}
 
-      <ExploreCoursesSection />
+      <ExploreCoursesSection courseId={course?.data?.category?.id} />
     </div>
   );
 }

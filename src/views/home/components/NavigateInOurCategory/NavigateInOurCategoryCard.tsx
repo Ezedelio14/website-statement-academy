@@ -70,7 +70,7 @@ export function NavigateInOurCategoryCard({
       </div>
       <div className="flex-1 flex flex-col px-6 py-4 gap-y-4 justify-between">
         <div className="flex flex-col gap-y-4">
-          <span className="text-lg font-bold">{title}</span>
+          <span className="text-lg font-bold line-clamp-2">{title}</span>
           <div className="flex flex-col gap-y-2 items-start">
             <div className="flex items-center text-sm line-clamp-1">
               <span className="text-gray-2">
@@ -95,7 +95,7 @@ export function NavigateInOurCategoryCard({
           <span>
             {lessons} {homeTr("home.WhatWeHave.items.lessons")}
           </span>
-          <span>{hours}hr</span>
+          <span>{hours}h</span>
         </div>
       </div>
     </div>
