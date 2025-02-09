@@ -1,36 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import { PlayBtn } from "@/components/common/button/PlayBtn";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
+import dynamic from "next/dynamic";
+import { useRouter } from "@/i18n/routing";
 
+const ReactPlayer = dynamic(() => import("react-player/lazy"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full flex rounded-2xl h-64 lg:h-full skeleton bg-gray-100" />
+  ),
+});
 interface Props {
+  id?: string;
   img?: string;
   title?: string;
   hours?: number;
   lessons: number;
   mentor: string;
   course: string;
-
-  onPlay?: () => void;
+  trailer?: string;
   description?: string;
-  onClick?: () => void;
 }
+
 export function NavigateInOurCategoryCard({
+  id,
   img,
   hours,
   title,
-  onPlay,
   course,
   mentor,
   lessons,
+  trailer,
   description,
-  onClick,
 }: Props) {
+  const router = useRouter();
   const { homeTr } = useHomeTr();
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
-    <div className="rounded-[8px] bg-blue-3 h-[550px] flex flex-col">
-      <div className="relative rounded-t-[8px] h-[298px] bg-gray-1">
+    <div className="rounded-[8px] overflow-hidden bg-blue-3 h-[550px] flex flex-col">
+      <div className="relative h-[298px] bg-gray-1 overflow-hidden">
         <div className="absolute h-full w-full top-0 left-0 flex flex-col justify-center items-center">
-          <PlayBtn onClick={onPlay} />
+          {!isPlaying && (
+            <div className="relative z-10">
+              <PlayBtn onClick={() => setIsPlaying(true)} />
+            </div>
+          )}
+          <div className="flex items-center justify-center absolute left-0 top-0 h-full w-full">
+            {isPlaying && trailer ? (
+              <ReactPlayer
+                url={trailer}
+                width="100%"
+                height="100%"
+                playing={true}
+                controls={true}
+              />
+            ) : (
+              <img
+                src={img}
+                alt="banner"
+                className="object-cover h-full w-full"
+              />
+            )}
+          </div>
           <span className="mt-4 text-sm">
             {homeTr("home.NavigateInOurCategory.see-trailer")}
           </span>
@@ -42,7 +74,7 @@ export function NavigateInOurCategoryCard({
           <div className="flex flex-col gap-y-2 items-start">
             <div className="flex items-center text-sm line-clamp-1">
               <span className="text-gray-2">
-                {homeTr("home.ComingSoon.mentor")}:{" "}
+                {homeTr("home.ComingSoon.mentor")}:
               </span>
               <span className="ml-2 text-white font-semibold line-clamp-1">
                 {mentor}
@@ -55,18 +87,15 @@ export function NavigateInOurCategoryCard({
         </div>
         <div className="flex items-center gap-x-4">
           <button
-            onClick={onClick}
-            className="bg-gray-1 px-4 py-2 text-sm rounded-[8px]"
+            onClick={() => router.push(`/course/${id}`)}
+            className="bg-gray-1 px-4 py-2 text-sm rounded-[8px] hover:opacity-50 transition-all"
           >
             {homeTr("home.NavigateInOurCategory.see-course")}
           </button>
           <span>
             {lessons} {homeTr("home.WhatWeHave.items.lessons")}
           </span>
-          <span>
-            {hours}
-            hr
-          </span>
+          <span>{hours}hr</span>
         </div>
       </div>
     </div>

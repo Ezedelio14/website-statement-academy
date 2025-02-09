@@ -6,18 +6,16 @@ interface Props {
 }
 
 const queryFn = async ({ id }: Props) => {
-  const response = await ProductApi.get("", {
-    params: { id },
-  });
+  const response = await ProductApi.get(`/pe/training/courses/${id}`);
 
   return response?.data;
 };
 
 export function useApiLoadCoursesById({ id }: Props) {
-  const { data: product, isLoading: isLoadingProduct } = useQuery({
+  const { data: course, isLoading: isLoadingCourse } = useQuery({
     queryFn: () => queryFn({ id }),
-    queryKey: ["product", id],
+    queryKey: ["course", id],
   });
 
-  return { product, isLoadingProduct };
+  return { course, isLoadingCourse };
 }

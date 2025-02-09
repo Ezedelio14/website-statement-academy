@@ -23,8 +23,15 @@ export default function CoursesCard({
   return (
     <div
       onClick={onClick}
-      className="relative h-[438px]  bg-blue-3 rounded-[8px] hover:opacity-50 cursor-pointer w-full bg-gradient-2"
+      className="relative h-[438px]  bg-blue-3 rounded-[8px] hover:opacity-50 cursor-pointer w-full bg-gradient-2 overflow-hidden"
     >
+      <div className="flex items-center justify-center absolute left-0 top-0 h-full w-full">
+        <img
+          alt="banner"
+          src={thumbnail}
+          className="object-cover h-full w-full"
+        />
+      </div>
       {isNew && (
         <div className="flex absolute top-0 left-0 p-6">
           <div className="bg-white rounded-[16px] px-[16px] py-[6px] text-blue-1">
