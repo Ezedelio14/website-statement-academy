@@ -1,6 +1,151 @@
 {
   "home": {
-    "title": "Fransçais",
-    "about": "Go to the about page"
+    "Hero": {
+      "title": "Débloquer les compétences Créer une nouvelle vie",
+      "description": "Mirantes propose des cours techniques pour les professionnels des principaux enseignants de leurs secteurs."
+    },
+    "WhatWeHave": {
+      "title": "Ce que nous avons disponible",
+      "items": {
+        "courses": "cours",
+        "teachers": "enseignants",
+        "lessons": "classes"
+      }
+    },
+    "ForProfessionals": {
+      "title": "Pour les professionnels et les affaires",
+      "items": {
+        "1": {
+          "title": "Avoir plus de liberté de temps",
+          "description": "Avec le marketing numérique, vous pouvez travailler où et quand vous le souhaitez."
+        }
+      }
+    },
+    "Meeting-with-best": {
+      "title": "Une réunion avec les meilleurs du marché",
+      "new": "Nouveau",
+      "item": {
+        "title": "COMMERCIALISATION",
+        "description": "Une rêverie profonde sur le marketing",
+        "see-trailer": "Regardez la bande-annonce"
+      }
+    },
+    "MiraAcademy": {
+      "title": "Académie Mira avec divers contenu",
+      "items": {
+        "1": "Trésorerie"
+      },
+      "contents": {
+        "1": {
+          "title1": "classe",
+          "description": "Des cours de haut niveau sur divers problèmes d'investissement et de financement où vous êtes enseigné par les principaux experts du marché."
+        },
+        "2": {
+          "title1": "livres",
+          "description": "Des cours de haut niveau sur divers problèmes d'investissement et de financement où vous êtes enseigné par les principaux experts du marché."
+        },
+        "3": {
+          "title1": "série",
+          "description": "Des cours de haut niveau sur divers problèmes d'investissement et de financement où vous êtes enseigné par les principaux experts du marché."
+        }
+      }
+    },
+    "ComingSoon": {
+      "title": "Prochainement",
+      "mentor": "Mentor"
+    },
+    "TheBestMentorAreInMirantes": {
+      "title": "Les meilleurs mentors sont dans les belvédères"
+    },
+    "NavigateInOurCategory": {
+      "title": "Parcourir entre nos catégories",
+      "courses-about": "cours sur",
+      "see-all-courses": "Voir tous les cours",
+      "see-course": "Voir",
+      "classes": "Classes",
+      "see-trailer": "Regardez la bande-annonce"
+    },
+    "HomeStartFromBegin": {
+      "title": "Commencer à zéro avec",
+      "items": {
+        "1": "Mentors spécialisés",
+        "2": "Classes interactives",
+        "3": "Certificats de conclusion"
+      }
+    },
+    "Overview": {
+      "title": "Un aperçu de notre plateforme"
+    },
+    "AllWorkLevels": {
+      "title": "Nous travaillons avec tous les niveaux d'apprentissage",
+      "levels": {
+        "bigener": {
+          "title": "Débutant",
+          "items": {
+            "1": {
+              "title": "Apprenez de Zero Bigener 1",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "2": {
+              "title": "Apprenez de Zero Bigener 2",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "3": {
+              "title": "Apprenez de Zero Bigener 3",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "4": {
+              "title": "Apprenez de Zero Bigener 4",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            }
+          }
+        },
+        "middle": {
+          "title": "Intermédiaire",
+          "items": {
+            "1": {
+              "title": "Apprendre de zéro middle 1",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "2": {
+              "title": "Apprenez de zéro middle 2",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "3": {
+              "title": "Apprenez de zéro middle 3",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "4": {
+              "title": "Apprenez de zéro middle 4",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            }
+          }
+        },
+        "professional": {
+          "title": "Professionnel",
+          "items": {
+            "1": {
+              "title": "Apprenez de Professional Zero 1",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "2": {
+              "title": "Apprenez de Professional Zero 2",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "3": {
+              "title": "Apprenez de Professional Zero 3",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            },
+            "4": {
+              "title": "Apprenez de Professional Zero 4",
+              "description": "Apprenez des concepts nouveaux et techniques sur le marché financier et améliorez encore votre prise de décision."
+            }
+          }
+        }
+      }
+    },
+    "Testimony": {
+      "title": "Voyez ce que nos membres disent."
+    }
   }
 }

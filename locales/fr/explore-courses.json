@@ -1,3 +1,41 @@
 {
-  "explore-courses": {}
+  "explore-courses": {
+    "Tags": {
+      "title": "Un monde énorme pour vous inspirer",
+      "tags": {
+        "1": "Tendance",
+        "2": "Éducation",
+        "3": "Nourriture",
+        "4": "Design et style",
+        "5": "Musique",
+        "6": "Entreprise",
+        "7": "Économie",
+        "8": "Maison et style de vie",
+        "9": "Communauté et gouvernement",
+        "10": "Science et technologie",
+        "11": "Bien-être"
+      }
+    },
+    "Courses": {
+      "see-all": "Voir tout",
+      "courses-in": "Cours",
+      "business-management": "Gestion des affaires",
+      "filters": {
+        "all": "Tous",
+        "coming-soon": "Prochainement"
+      },
+      "new-course": "Nouveau",
+      "lessons": "Classes"
+    },
+    "Course": {
+      "presentation": "Présentation",
+      "modules": "Module: Introduction",
+      "see-trailer": "Voir la bande-annonce du cours",
+      "journey": "Parcours",
+      "mentor": "Mentor:",
+      "duration": "Durée du cours:",
+      "category": "Catégorie",
+      "others": "Autres cours connexes"
+    }
+  }
 }

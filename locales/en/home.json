@@ -1,6 +1,151 @@
 {
   "home": {
-    "title": "English",
-    "about": "Go to the about page"
+    "Hero": {
+      "title": "Unlock skills create a new life",
+      "description": "Mirantes offers technical courses for professionals from the main teachers in their sectors."
+    },
+    "WhatWeHave": {
+      "title": "What we have available",
+      "items": {
+        "courses": "courses",
+        "teachers": "teachers",
+        "lessons": "classes"
+      }
+    },
+    "ForProfessionals": {
+      "title": "For professionals and business",
+      "items": {
+        "1": {
+          "title": "Have more freedom of time",
+          "description": "With digital marketing you can work where and when you want."
+        }
+      }
+    },
+    "Meeting-with-best": {
+      "title": "A meeting with the best in the market",
+      "new": "New",
+      "item": {
+        "title": "MARKETING",
+        "description": "A deep daydream about marketing",
+        "see-trailer": "Watch the trailer"
+      }
+    },
+    "MiraAcademy": {
+      "title": "Mira Academy with various content",
+      "items": {
+        "1": "Treasury"
+      },
+      "contents": {
+        "1": {
+          "title1": "class",
+          "description": "High -level classes on various investment and finance issues where you are taught by major market experts."
+        },
+        "2": {
+          "title1": "books",
+          "description": "High -level classes on various investment and finance issues where you are taught by major market experts."
+        },
+        "3": {
+          "title1": "series",
+          "description": "High -level classes on various investment and finance issues where you are taught by major market experts."
+        }
+      }
+    },
+    "ComingSoon": {
+      "title": "Shortly",
+      "mentor": "Mentor"
+    },
+    "TheBestMentorAreInMirantes": {
+      "title": "The best mentors are in the lookouts"
+    },
+    "NavigateInOurCategory": {
+      "title": "Browse between our categories",
+      "courses-about": "courses on",
+      "see-all-courses": "See all courses",
+      "see-course": "See course",
+      "classes": "Classes",
+      "see-trailer": "Watch the trailer"
+    },
+    "HomeStartFromBegin": {
+      "title": "Start from scratch with",
+      "items": {
+        "1": "Specialized mentors",
+        "2": "Interactive classes",
+        "3": "Conclusion Certificates"
+      }
+    },
+    "Overview": {
+      "title": "An overview of our platform"
+    },
+    "AllWorkLevels": {
+      "title": "We work with all levels of learning",
+      "levels": {
+        "bigener": {
+          "title": "Beginner",
+          "items": {
+            "1": {
+              "title": "Learn from Zero Bigener 1",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "2": {
+              "title": "Learn from Zero Bigener 2",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "3": {
+              "title": "Learn from Zero Bigener 3",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "4": {
+              "title": "Learn from Zero Bigener 4",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            }
+          }
+        },
+        "middle": {
+          "title": "Intermediate",
+          "items": {
+            "1": {
+              "title": "Learn from Zero Middle 1",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "2": {
+              "title": "Learn from Zero Middle 2",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "3": {
+              "title": "Learn from Zero Middle 3",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "4": {
+              "title": "Learn from Zero Middle 4",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            }
+          }
+        },
+        "professional": {
+          "title": "Professional",
+          "items": {
+            "1": {
+              "title": "Learn from Professional Zero 1",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "2": {
+              "title": "Learn from Professional Zero 2",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "3": {
+              "title": "Learn from Professional Zero 3",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            },
+            "4": {
+              "title": "Learn from Professional Zero 4",
+              "description": "Learn new and technical concepts about the financial market and further improve your decision making."
+            }
+          }
+        }
+      }
+    },
+    "Testimony": {
+      "title": "See what our members are saying."
+    }
   }
 }

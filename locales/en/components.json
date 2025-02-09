@@ -1,5 +1,55 @@
 {
   "components": {
-    "Labels": {}
+    "Labels": {
+      "and-the": "and the",
+      "lessons": "Classes",
+      "sign-in": "Enter the platform",
+      "explore-course": "Explore courses",
+      "google": "Continue with Google",
+      "signin-question": "Already have an account?",
+      "sign-in-2": "Start",
+      "create-account": "Create Account",
+      "see-trailer": "Watch trailer",
+      "share": "To share",
+      "mentor": "Mentor"
+    },
+    "Links": {
+      "terms": "TERMS OF USE",
+      "policy_privacy": "Privacy Policy"
+    },
+    "Placeholder": {
+      "search-input": "|Pesquise cursos..."
+    },
+    "SocialAuthCard": {
+      "title": "Create your free account",
+      "agree": "When continuing, you agree with",
+      "mirantes": " from the lookouts"
+    },
+    "FAQ": {
+      "title": "Here your questions are answered",
+      "description": "Other people who use lookouts wonder",
+      "question_and_answer": {
+        "1": {
+          "question": "What is lookouts?",
+          "answer": "Mirantes is a SaaS platform where people can manage their careers (this includes finding jobs and monitoring the state of their candidates) and companies can manage their employees (this includes launching vacancies, recruiting and hiring) "
+        },
+        "2": {
+          "question": "What is available at lookouts?",
+          "answer": "Mirantes is a SaaS platform where people can manage their careers (this includes finding jobs and monitoring the state of their candidates) and companies can manage their employees (this includes launching vacancies, recruiting and hiring) "
+        },
+        "3": {
+          "question": "What is Mira?",
+          "answer": "Mirantes is a SaaS platform where people can manage their careers (this includes finding jobs and monitoring the state of their candidates) and companies can manage their employees (this includes launching vacancies, recruiting and hiring) "
+        },
+        "4": {
+          "question": "What is the Saas model",
+          "answer": "Mirantes is a SaaS platform where people can manage their careers (this includes finding jobs and monitoring the state of their candidates) and companies can manage their employees (this includes launching vacancies, recruiting and hiring) "
+        }
+      }
+    },
+    "StartToDay": {
+      "title": "Start learning today with ",
+      "description": "Start your career with academy lookouts. "
+    }
   }
 }

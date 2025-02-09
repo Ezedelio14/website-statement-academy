@@ -1,3 +1,41 @@
 {
-  "explore-courses": {}
+  "explore-courses": {
+    "Tags": {
+      "title": "A huge world to inspire you",
+      "tags": {
+        "1": "Tendencies",
+        "2": "Education",
+        "3": "Food",
+        "4": "Design and Style",
+        "5": "Music",
+        "6": "Business",
+        "7": "Economy",
+        "8": "Home and lifestyle",
+        "9": "Community and government",
+        "10": "Science and Technology",
+        "11": "Well-being"
+      }
+    },
+    "Courses": {
+      "see-all": "See all",
+      "courses-in": "Courses in",
+      "business-management": "Business Management",
+      "filters": {
+        "all": "All",
+        "coming-soon": "Shortly"
+      },
+      "new-course": "New",
+      "lessons": "Classes"
+    },
+    "Course": {
+      "presentation": "Presentation",
+      "modules": "Module: Introduction",
+      "see-trailer": "See course trailer",
+      "journey": "Course journey",
+      "mentor": "Mentor:",
+      "duration": "Course Duration:",
+      "category": "Category",
+      "others": "Other related courses"
+    }
+  }
 }

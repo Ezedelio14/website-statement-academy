@@ -4,6 +4,7 @@ import { useExploreCoursesTr } from "../../../../locales/utils/useExploreCourses
 import { useParams } from "next/navigation";
 import CoursesCard from "./CoursesCard";
 import { useRouter } from "@/i18n/routing";
+import { decodeText } from "@/utils/text";
 
 export default function CoursesContainer() {
   const router = useRouter();
@@ -144,7 +145,7 @@ export default function CoursesContainer() {
   return (
     <Section className="w-full flex flex-col  mt-[159px]">
       <span className="text-xl">
-        {exploreCourses(`explore-courses.Courses.${courseType}` as any)}
+        {decodeText(courseType?.toString() ?? "")}
       </span>
       <div className="flex gap-x-[239px] mt-6">
         <div className="relative flex flex-col gap-y-4">

@@ -1,11 +1,11 @@
 import React from "react";
+import { useCourseContext } from "../context/CourseContext";
 import { Section } from "@/components/common/section/Section";
 import { ExploreCoursesSection } from "./ExploreCoursesSection";
 import { useExploreCoursesTr } from "../../../../locales/utils/useExploreCoursesTr";
-import { useRouter } from "@/i18n/routing";
 
 export function ExploreCoursesContainer() {
-  const router = useRouter();
+  const { filters } = useCourseContext();
   const { exploreCourses } = useExploreCoursesTr();
 
   const courses = [
@@ -63,41 +63,9 @@ export function ExploreCoursesContainer() {
 
   return (
     <Section className="flex flex-col gap-y-[80px] items-center w-full mt-[80px]">
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"tendencies"}`)}
-        label={20 + " " + exploreCourses("explore-courses.Courses.tendencies")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
-      <ExploreCoursesSection
-        items={courses}
-        onSeeAll={() => router.push(`explore-courses/${"business-management"}`)}
-        label={exploreCourses("explore-courses.Courses.business-management")}
-      />
+      {filters?.map((filter, index) => (
+        <ExploreCoursesSection key={index} items={courses} filter={filter} />
+      ))}
     </Section>
   );
 }

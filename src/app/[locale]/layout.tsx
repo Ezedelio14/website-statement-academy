@@ -1,10 +1,13 @@
 import "@/styles/globals.css";
-import { Manrope } from "next/font/google";
-import { getMessages, setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { Manrope } from "next/font/google";
+import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { ApolloProvider } from "@/providers/ApolloPovider";
 import { RootLayout } from "@/components/layout/RootLayout";
+import { SearchContextProvider } from "@/context/SearchContext";
+import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 
 const manRope = Manrope({ subsets: ["latin"] });
 
@@ -37,7 +40,13 @@ export default async function LocaleLayout({
       </head>
       <body className={manRope.className} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <RootLayout>{children}</RootLayout>
+          <ApolloProvider>
+            <ReactQueryProvider>
+              <SearchContextProvider>
+                <RootLayout>{children}</RootLayout>
+              </SearchContextProvider>
+            </ReactQueryProvider>
+          </ApolloProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -13,6 +13,9 @@
       "share": "Compartilhar",
       "mentor": "Mentor"
     },
+    "Placeholder": {
+      "search-input": "|Pesquise cursos..."
+    },
     "Links": {
       "terms": "Termos de uso",
       "policy_privacy": "Política de privacidade"
