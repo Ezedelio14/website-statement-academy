@@ -31,7 +31,8 @@ export function HomeTestimony() {
       <div className="w-full h-[511px] justify-between flex items-center">
         <div
           ref={scrollRef}
-          className="w-[384px] max-h-[400px] overflow-y-scroll hidden xl:flex flex-col gap-y-6" style={{ scrollbarWidth: 'none' }}
+          className="w-[384px] max-h-[400px] overflow-y-scroll hidden xl:flex flex-col gap-y-6"
+          style={{ scrollbarWidth: "none" }}
         >
           {testimonies.map((_, index) => (
             <div
@@ -90,8 +91,8 @@ export function HomeTestimony() {
             <div className="flex items-center gap-x-2 mt-2">
               {Array(5)
                 ?.fill(undefined)
-                .map(() => (
-                  <StartBlue />
+                .map((_, index) => (
+                  <StartBlue key={index} />
                 ))}
             </div>
           </div>

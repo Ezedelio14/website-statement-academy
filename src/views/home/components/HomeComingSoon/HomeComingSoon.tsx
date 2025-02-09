@@ -6,7 +6,7 @@ import useWindowSize from "@/hooks/useWindowSize"; // Import custom hook
 
 export function HomeComingSoon() {
   const { homeTr } = useHomeTr();
-  const { width = 0 } = useWindowSize(); 
+  const { width = 0 } = useWindowSize();
 
   const items = [
     {
@@ -55,8 +55,8 @@ export function HomeComingSoon() {
         {homeTr("home.ComingSoon.title")}
       </h2>
       <CarouselGrid amount={getAmount()}>
-        {items.map((item) => (
-          <SwiperSlide key={item.id}>
+        {items.map((item, index) => (
+          <SwiperSlide key={index}>
             <div className="relative bg-white shadow-md text-center h-[250px] rounded-[8px] overflow-hidden">
               <img
                 src={
