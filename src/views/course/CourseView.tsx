@@ -8,13 +8,13 @@ import { useApiLoadCoursesById } from "@/services/api/useApiLoadCoursesById";
 import { Spinner } from "@/components/shared/spinner/Spinner";
 
 export function CourseView() {
-  const params = useParams();
-  const courseId = params?.courseId?.toString() || "";
-  const [isTrailerOpen, setIsTrailerOpen] = useState(false);
-  const { course, isLoadingCourse } = useApiLoadCoursesById({ id: courseId });
+  const params = useParams()
+  const courseId = params?.courseId?.toString() || ""
+  const [isTrailerOpen, setIsTrailerOpen] = useState(false)
+  const { course, isLoadingCourse } = useApiLoadCoursesById({ id: courseId })
 
   return (
-    <div className="relative text-white w-full flex flex-col justify-center">
+    <div className="relative text-white w-full flex flex-col justify-center px-4 md:px-8 mt-5">
       <div className="absolute top-0 left-0 h-[722px] overflow-hidden">
         {isLoadingCourse ? (
           <div className="w-[100vw] h-full flex justify-center items-center">

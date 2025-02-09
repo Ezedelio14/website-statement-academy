@@ -55,7 +55,7 @@ export function CoursePresentation({
         </div>
       ) : (
         <>
-          <div className="flex w-full mt-[40px] h-[800px] gap-x-[32px]">
+          <div className="flex w-full mt-[40px] h-[800px] gap-x-[32px] flex-col gap-8 lg:flex-row">
             <div className="flex-1 bg-blue-3 relative h-full rounded-[16px] overflow-hidden">
               {state ? (
                 <ReactPlayer
@@ -79,7 +79,7 @@ export function CoursePresentation({
               )}
             </div>
 
-            <div className="w-[384px] flex flex-col">
+            <div className="w-full lg:w-[384px] flex flex-col">
               <div
                 onClick={() => setState(true)}
                 className="bg-blue-1 w-full py-[12px] px-[16px] gap-x-4 rounded-[8px] flex items-center cursor-pointer hover:opacity-50"
@@ -107,7 +107,7 @@ export function CoursePresentation({
           </div>
 
           <div className="mt-[40px] flex flex-col gap-y-6">
-            <p className="w-[800px] text-base">{description}</p>
+            <p className="max-w-[800px] text-base">{description}</p>
 
             <span className="text-gray text-base">
               {exploreCourses("explore-courses.Course.mentor")}{" "}

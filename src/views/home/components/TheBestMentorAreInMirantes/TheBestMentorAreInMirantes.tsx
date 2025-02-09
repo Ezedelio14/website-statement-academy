@@ -2,9 +2,12 @@ import React from "react";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
 import CarouselGrid from "@/components/shared/swiper/SwiperItems";
 import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export function TheBestMentorAreInMirantes() {
   const { homeTr } = useHomeTr();
+  const { width = 0 } = useWindowSize(); 
+
 
   const items = [
     {
@@ -49,13 +52,19 @@ export function TheBestMentorAreInMirantes() {
     },
   ];
 
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 3; // Tablet
+    return 6; // Desktop
+  };
+
   return (
-    <div>
+    <div className="px-4 md:px-8">
       <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full">
         <h2 className="text-[2rem] font-bold">
           {homeTr("home.TheBestMentorAreInMirantes.title")}
         </h2>
-        <CarouselGrid amount={6}>
+        <CarouselGrid amount={getAmount()}>
           {items.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="relative h-[500px] rounded-[8px] overflow-hidden">

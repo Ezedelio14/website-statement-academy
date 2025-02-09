@@ -27,7 +27,7 @@ export function SocialAuthCard({ className }: Props) {
       </div>
 
       <div>
-        <p className="text-center text-base w-[250px]">
+        <p className="text-center text-base lg:max-w-[250px]">
           {componentsTr("components.SocialAuthCard.agree")}
           {"\n"}
           <a

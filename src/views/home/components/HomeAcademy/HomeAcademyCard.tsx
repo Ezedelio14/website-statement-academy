@@ -6,8 +6,8 @@ interface Props {
 }
 export function HomeAcademyCard({ label, description }: Props) {
   return (
-    <div className="flex flex-col gap-y-4 max-w-[488px]">
-      <span className="text-2xl">
+    <div className="flex flex-col gap-y-4 w-full lg:max-w-[488px]">
+      <span className="text-2xl ">
         Mira<span className="text-blue font-bold">{label}</span>
       </span>
       <p>{description}</p>

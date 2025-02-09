@@ -23,7 +23,7 @@ export default function CoursesCard({
   return (
     <div
       onClick={onClick}
-      className="relative h-[438px]  bg-blue-3 rounded-[8px] hover:opacity-50 cursor-pointer w-full bg-gradient-2 overflow-hidden"
+      className="relative h-[438px] bg-blue-3 rounded-[8px] hover:opacity-50 cursor-pointer w-full bg-gradient-2 overflow-hidden"
     >
       <div className="flex items-center justify-center absolute left-0 top-0 h-full w-full">
         <img

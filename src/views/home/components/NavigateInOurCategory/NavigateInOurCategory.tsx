@@ -8,12 +8,16 @@ import CarouselGrid from "@/components/shared/swiper/SwiperItems";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
 import { NavigateInOurCategoryCard } from "./NavigateInOurCategoryCard";
+import useWindowSize from "@/hooks/useWindowSize";
 import { useApiLoadCategories } from "@/services/api/useApiLoadCategory";
+
+
 
 export function NavigateInOurCategory() {
   const { homeTr } = useHomeTr();
   const [state, setState] = useState<string>();
   const { categories, isLoadingCategories } = useApiLoadCategories();
+  const { width } = useWindowSize();
 
   const { courses, isLoadingCourses } = useApiLoadCourses({
     page: 1,
@@ -27,8 +31,14 @@ export function NavigateInOurCategory() {
     }
   }, [isLoadingCategories]);
 
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+
   return (
-    <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full">
+    <div className="flex-col items-center gap-y-[80px] py-[80px] w-full hidden xl:flex">
       <h2 className="text-[2rem] font-bold">
         {homeTr("home.NavigateInOurCategory.title")}
       </h2>
@@ -80,7 +90,7 @@ export function NavigateInOurCategory() {
               </div>
             ) : (
               <div>
-                <CarouselGrid amount={3}>
+                <CarouselGrid amount={getAmount()}>
                   {courses?.data?.items?.map((item, index) => (
                     <SwiperSlide key={index}>
                       <NavigateInOurCategoryCard
@@ -103,5 +113,8 @@ export function NavigateInOurCategory() {
         </div>
       </div>
     </div>
+
   );
+
+ 
 }

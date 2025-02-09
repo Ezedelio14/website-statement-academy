@@ -13,14 +13,71 @@ export function HomeAllWorkLevels() {
   );
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="flex justify-center flex-col w-full max-w-[1216px]">
+    <div className="w-full flex justify-center px-4 md:px-8">
+      {/* MOBILE */}
+      <div className="grid xl:hidden flex-col gap-y-12 w-full grid-cols-1 md:grid-cols-2">
+        <div className="flex gap-x-[19px] w-full lg:max-w-[386px]">
+          <div>
+            <ArrowIncreasingSvg />
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <span className="text-xl font-bold">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.1.title`)}
+            </span>
+            <p className="text-base">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.1.description`)}
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-x-[19px] w-full lg:max-w-[386px]">
+          <div>
+            <ArrowIncreasingSvg />
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <span className="text-xl font-bold">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.2.title`)}
+            </span>
+            <p className="text-base">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.2.description`)}
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-x-[19px] w-full lg:max-w-[386px]">
+          <div>
+            <ArrowIncreasingSvg />
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <span className="text-xl font-bold">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.3.title`)}
+            </span>
+            <p className="text-base">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.3.description`)}
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-x-[19px] w-full lg:max-w-[386px]">
+          <div>
+            <ArrowIncreasingSvg />
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <span className="text-xl font-bold">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.4.title`)}
+            </span>
+            <p className="text-base">
+              {homeTr(`home.AllWorkLevels.levels.${state}.items.4.description`)}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* DESKTOP */}
+      <div className="hidden xl:flex justify-center flex-col w-full max-w-[1216px]">
         <div className="w-full flex flex-col items-center">
           <PersonBlueSvg />
           <div className="h-[112px] bg-blue w-[2px]" />
         </div>
         <div className="relative w-full">
-          <div className="absolute z-10 top-0 -left-[6rem] h-full w-[calc(100%+12rem)] flex justify-between items-center transition-all">
+          <div className="absolute z-10 top-0 -left-[3rem] h-full w-[calc(100%+6rem)] flex justify-between items-center transition-all">
             {["bigener", "middle", "professional"].map((level, index) => (
               <div
                 key={index}

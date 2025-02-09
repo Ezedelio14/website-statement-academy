@@ -7,11 +7,11 @@ interface Props {
 }
 export function HomeForProfessionalsCard({ icon, title, description }: Props) {
   return (
-    <div className="max-w-[280px] flex flex-col gap-y-6">
+    <div className="w-full md:max-w-[280px] mx-auto flex flex-col gap-y-6">
       {icon}
       <div>
         <div className="pr-6">
-          <span className="text-lg">{title}</span>
+          <span className="text-lg font-bold">{title}</span>
         </div>
         <p className="mt-4">{description}</p>
       </div>

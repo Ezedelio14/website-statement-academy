@@ -2,9 +2,11 @@ import React from "react";
 import { useHomeTr } from "../../../../../locales/utils/useHomeTr";
 import CarouselGrid from "@/components/shared/swiper/SwiperItems";
 import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@/hooks/useWindowSize"; // Import custom hook
 
 export function HomeComingSoon() {
   const { homeTr } = useHomeTr();
+  const { width = 0 } = useWindowSize(); 
 
   const items = [
     {
@@ -41,12 +43,18 @@ export function HomeComingSoon() {
     },
   ];
 
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+
   return (
-    <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full">
-      <h2 className="text-[2rem] font-bold">
+    <div className="flex flex-col items-center gap-y-[80px] py-[80px] w-full px-4 md:px-8">
+      <h2 className="text-[2rem] font-bold text-center">
         {homeTr("home.ComingSoon.title")}
       </h2>
-      <CarouselGrid amount={3}>
+      <CarouselGrid amount={getAmount()}>
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="relative bg-white shadow-md text-center h-[250px] rounded-[8px] overflow-hidden">

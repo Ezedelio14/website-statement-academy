@@ -28,33 +28,34 @@ export default function CoursesContainer() {
   });
 
   return (
-    <Section className="w-full flex flex-col  mt-[159px]">
+    <Section className="w-full flex flex-col  mt-[159px] px-4 md:px-8">
       <span className="text-xl">{selectCourse?.name}</span>
-      <div className="flex gap-x-[239px] mt-6">
-        <div className="relative flex flex-col gap-y-4">
+      <div className="flex flex-col lg:flex-row gap-y-8 gap-x-[239px] mt-6">
+        <div className="relative flex lg:flex-col gap-4 lg:border-0 border-b border-[#3A4150]">
           {["all", "coming-soon"]?.map((item, index) => (
             <div
               key={index}
               onClick={() => setState(item)}
-              className="relative cursor-pointer text-gray-2 text-base"
+              className={`relative cursor-pointer text-gray-2 text-base ${state === item ? "border-b" : "text-gray-400"}`}
             >
               {state === item && (
                 <div className="absolute h-full -left-[calc(100%+32px)] flex items-center">
-                  <div className="bg-blue h-[2px] w-[48px]" />
+                  <div className="bg-blue h-[2px] w-[48px] hidden lg:block" />
                 </div>
               )}
               {exploreCourses(`explore-courses.Courses.filters.${item}` as any)}
             </div>
           ))}
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-[32px]">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
           {isLoadingCourses ? (
             <div className="flex justify-center items-center h-[10rem]">
               <Spinner />
             </div>
           ) : (
+            
             <>
-              {courses?.data?.items?.map((course, index) => (
+             {courses?.data?.items?.map((course, index) => (
                 <CoursesCard
                   key={index}
                   title={course?.title}
@@ -66,6 +67,7 @@ export default function CoursesContainer() {
                 />
               ))}
             </>
+            
           )}
         </div>
       </div>

@@ -23,7 +23,7 @@ export function HomeTestimony() {
   };
 
   return (
-    <Section className="flex flex-col items-center py-[79px] mt-[179px]">
+    <Section className="flex flex-col items-center py-[79px] mt-[179px] px-4 md:px-8">
       <h2 className="text-[2rem] font-bold mb-[80px] text-center">
         {homeTr("home.Testimony.title")}
       </h2>
@@ -31,7 +31,7 @@ export function HomeTestimony() {
       <div className="w-full h-[511px] justify-between flex items-center">
         <div
           ref={scrollRef}
-          className="w-[384px] max-h-[400px] overflow-auto flex flex-col gap-y-6"
+          className="w-[384px] max-h-[400px] overflow-y-scroll hidden xl:flex flex-col gap-y-6" style={{ scrollbarWidth: 'none' }}
         >
           {testimonies.map((_, index) => (
             <div
@@ -51,7 +51,7 @@ export function HomeTestimony() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-y-8">
+        <div className="flex-col gap-y-8 hidden xl:flex">
           <button
             disabled={state === 0}
             onClick={() => state > 0 && handleScroll(state - 1)}
@@ -84,7 +84,7 @@ export function HomeTestimony() {
           </button>
         </div>
 
-        <div className="flex-1 bg-blue-1 max-w-[520px] h-[400px] p-[32px] rounded-[8px] overflow-auto">
+        <div className="flex-1 bg-blue-1 xl:max-w-[520px] h-[400px] p-[32px] rounded-[8px] overflow-auto">
           <div>
             <span>Ensinamentos práticos e eficazes</span>
             <div className="flex items-center gap-x-2 mt-2">

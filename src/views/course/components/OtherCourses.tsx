@@ -7,6 +7,7 @@ import { useRouter } from "@/i18n/routing";
 import { Section } from "@/components/common/section/Section";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
 import { Spinner } from "@/components/shared/spinner/Spinner";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface Props {
   courseId: string;
@@ -14,6 +15,14 @@ interface Props {
 export function ExploreCoursesSection({ courseId }: Props) {
   const router = useRouter();
   const { exploreCourses } = useExploreCoursesTr();
+
+  const { width } = useWindowSize();
+
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
 
   const { courses, isLoadingCourses } = useApiLoadCourses({
     page: 1,
@@ -31,7 +40,7 @@ export function ExploreCoursesSection({ courseId }: Props) {
           <Spinner />
         </div>
       ) : (
-        <CarouselGrid amount={4}>
+        <CarouselGrid amount={getAmount()}>
           {courses?.data?.items?.map((course, index) => (
             <SwiperSlide key={index}>
               <CoursesCard

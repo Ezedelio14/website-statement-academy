@@ -7,6 +7,7 @@ import { useApiListProducts } from "@/services/hooks/useApiListProducts";
 import { Spinner } from "@/components/shared/spinner/Spinner";
 import { useRouter } from "@/i18n/routing";
 import { useApiLoadCourses } from "@/services/api/useApiLoadCourses";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface Props {
   name?: string;
@@ -25,9 +26,17 @@ export function ExploreCoursesSection({ name, filter, hideShowAll }: Props) {
     categoryId: reFilter?.id,
   });
 
+  const { width } = useWindowSize();
+
+  const getAmount = () => {
+    if (width < 768) return 1; // Mobile
+    if (width < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+
   return (
-    <div className="flex flex-col gap-y-9 w-full">
-      <div className="flex gap-x-4 items-center">
+    <div className="flex flex-col gap-y-9 w-full px-4 md:px-8">
+      <div className="flex gap-x-4">
         <span>
           {`${courses?.data?.items?.length ?? 0} ${exploreCourses(
             "explore-courses.Courses.courses-in"
@@ -53,8 +62,8 @@ export function ExploreCoursesSection({ name, filter, hideShowAll }: Props) {
           <Spinner />
         </div>
       ) : (
-        <div>
-          <CarouselGrid amount={3}>
+        <div className="w-full">
+          <CarouselGrid amount={getAmount()}>
             {courses?.data?.items?.map((item, index) => (
               <SwiperSlide key={index}>
                 <NavigateInOurCategoryCard
